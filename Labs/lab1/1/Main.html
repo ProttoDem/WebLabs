@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<header>
+		<a href="Main.html"><img src="logo.png" width="400px" alt=""></a>
+	</header>
+	<main>
+		<nav>
+			<ul>
+				<li><a href="Politics.html" class="h_btn btn1">Політика</a></li>
+                <li><a href="Sport.html" class="h_btn btn1">Спорт</a></li>
+                <li><a href="Show.html" class="h_btn btn1">Шоу</a></li>
+			</ul>
+		</nav>
+		<div class="news">
+			<ul>
+				<li style="margin-bottom: 25px;">
+					<img src="kpi.jpg" width="300px" alt="">
+					<table border="1" style="margin-right: 20px;">
+						<thead >
+							<th colspan="2">Термінова важлива таблиця з новинами</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Витрачено грошей: 5 тисяч</td>
+								<td>Куплено грошей: 2 копійки</td>
+							</tr>
+							<tr>
+								<td colspan="2">Борги грошей: 4 тисяч 58 копійок</td>
+							</tr>							
+						</tbody>
+						
+						
+
+					</table>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto odio iste soluta ratione illum dignissimos in modi autem eum quaerat esse nobis recusandae tempore, excepturi maiores harum repudiandae eius? Placeat.</p>
+				</li>
+				<li>
+					<img src="kpi.jpg" width="300px" alt="">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sapiente suscipit harum sed id unde dignissimos aspernatur. In repudiandae ad error maxime quisquam quasi omnis velit, hic iusto eum ducimus?</p>
+				</li>
+			</ul>
+		</div>
+		<form action="handler.php">
+		  <p><b>Введіть ваш коментар:</b></p>
+		  <p><textarea name="comment"></textarea></p>
+		  <p><input type="submit"></p>
+		</form>
+	</main>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		header { /*Заголовок*/
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		nav ul { /*Список у головному меню*/
+			list-style: none;
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 30px;
+		}
+
+		nav li {/* Кожен окремий елемент у списку в головному меню */
+			margin-right: 20px;
+		}
+
+		main { /*Глобальний стиль для головної частини*/
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.news {/*Глобальний стиль для блоку новин*/
+			padding: 30px 20px;
+		}
+
+		.news ul {/*Стиль для списку новин*/
+			list-style: none;
+		}
+
+		.news li {/*Стиль для кожного окремого елемента у списку новин*/
+			display: flex;
+		}
+
+		.news li img {/*Стиль для зображень у списку новин*/
+			width: 300px;
+			margin-right: 50px;
+		}
+
+	</style>
+</body>
+
+</html>
