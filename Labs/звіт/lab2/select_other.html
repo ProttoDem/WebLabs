@@ -79,7 +79,43 @@
                 </div>
             </div>
             <div class="central_block" id="content">
-                <p>select other</p>
+                <p>Споріднені селектори:</p>
+                <textarea readonly  cols="160" rows="4">
+                h5 ~ h6 {
+                    background-color: aqua;
+                }  
+                </textarea>
+                <p>Контекстні селектори:</p>
+                <textarea readonly  cols="160" rows="12">
+                    .news ul {/*Стиль для списку новин*/
+                        list-style: none;
+                    }
+            
+                    .news li {/*Стиль для кожного окремого елемента у списку новин*/
+                        display: flex;
+                    }
+            
+                    .news li img {/*Стиль для зображень у списку новин*/
+                        margin-right: 50px;
+                    }                  
+                </textarea>
+                <p>Селектори атрибутів:</p>
+                <textarea readonly  cols="160" rows="5">
+                    img[src="kpi.jpg"]{
+                        width: 400px;
+                        float: left;
+                    }
+                </textarea> 
+                <p>Селектор прямого потомка:</p>
+                <textarea readonly  cols="160" rows="7">
+                    nav > ul { /*Список у головному меню*/
+                        list-style: none;
+                        display: flex;
+                        justify-content: flex-start;
+                        padding-left: 30px;
+                    }
+                </textarea> 
+
             </div>
         </div>
     </div>

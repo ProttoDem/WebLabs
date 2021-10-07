@@ -79,7 +79,38 @@
                 </div>
             </div>
             <div class="central_block" id="content">
-                <p>select tag</p>
+                <p>Селектори тегу:</p>
+                <textarea readonly  cols="160" rows="12">
+                    header { /*Заголовок*/
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+            
+                    main { /*Глобальний стиль для головної частини*/
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                </textarea>
+                <p>Селектори класу:</p>
+                <textarea readonly  cols="160" rows="15">
+                    .news {/*Глобальний стиль для блоку новин*/
+                        padding: 30px 20px;
+                    }
+            
+                    .news ul {/*Стиль для списку новин*/
+                        list-style: none;
+                    }
+            
+                    .news li {/*Стиль для кожного окремого елемента у списку новин*/
+                        display: flex;
+                    }
+            
+                    .news li img {/*Стиль для зображень у списку новин*/
+                        margin-right: 50px;
+                    }
+                </textarea>
             </div>
         </div>
     </div>
