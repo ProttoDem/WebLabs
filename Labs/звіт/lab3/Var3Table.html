@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variant 3 table</title>
+    <style>
+        .index{
+            width: 100%;
+        }
+        .header{
+            height: 150px;
+        }
+        td{
+            padding: 30px;
+        }
+        .article{
+            height: 600px;
+        }
+        .footer{
+            height: 80px;
+        }
+        .main{
+            width: 100%;
+            height: 600px;
+            border-spacing: 50px;
+        }
+        .white_block td{
+            padding-right: 500px;
+            border: 1px solid black;
+        }
+        .main_content{
+            height: 200px;
+        }
+        .main_header{
+            height: 150px;
+        }
+        .main_content-footer{
+            height: 50px;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table class="index">
+        <tr class = "yellow header">
+            <td colspan="2">
+                <table>
+                    <tr bgcolor="white" class="white_block">
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="blue article"></td>
+            <td>
+                <table class = "main">
+                    <tr class="red main_header"> 
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="main_content" bgcolor="white"></td>
+                        <td class=" blue main_article" rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="red main_content-footer"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="yellow footer"></td>
+        </tr>
+    </table>   
+</body>
+</html>

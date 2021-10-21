@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table 6</title>
+	<style>
+		.main{
+			width: 100%;
+			background-color: white;
+			padding-left: 19px;
+			padding-right: 19px;
+		}
+		.yellow{
+			background-color: #FFC900 ;
+		}
+		.blue{
+            background-color: #1E90FF;
+        }
+        .red{
+        	background-color: #FF3100;
+        }
+		.header{
+			height: 120px;
+			border: 1px solid black;
+		}
+        td {
+        	padding: 30px;
+        	border: 1px solid black;
+        }
+        .white_block td{
+            padding-right: 500px;
+            border: 1px solid black;
+        }
+        .article{
+            height: 650px;
+        }
+        .footer{
+            height: 80px;
+        }
+        .tdwidth{
+        	width: 100%;
+        }
+        .white{
+        	border: 1px solid black;
+        }
+        .center{
+        	width: 100%;
+        }
+        .center_table{
+        	width: 100%;
+        	border-spacing: 20px 0px;
+
+        }
+        .bottom{
+        	width: 100%;
+        	padding-left: 18px;
+			padding-right: 18px;
+        }
+        
+	</style>
+</head>
+<body>
+	<table class="main" style="border-spacing: 1px 0px;"> 
+		<tbody>
+			<tr class="yellow header">
+				<td colspan="4" class="tdwidth">
+					<table>
+						<tr bgcolor="white" class="white_block">
+							<td></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="center">
+			<table class="center_table">
+				<tr>
+					<td class="blue article"></td>
+            		<td class="red article"></td>
+            		<td class="white article"></td>
+            		<td class="red article"></td>
+				</tr>
+			</table>	
+        	</tr>
+        	<table class="bottom" style="border-spacing: 2px 0px;">
+        		<tr>
+            	<td colspan="4" class="yellow footer"></td>
+        	</tr>
+        	</table>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variant 10 table</title>
+    <style>
+        .shrink:hover {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+        }
+        .main_div{
+            width: 90%;
+            height: 100vh;
+        }
+        table{
+            margin-right: 20px;
+            width: 100%;
+            height: 100%;
+            
+
+        }
+        #one{
+            background-color: blue;
+            height: 10%;
+            width: 80%;
+
+
+        }
+        #two{
+            background-color: yellow;
+            height: 100%;
+            width: 10%;
+        }
+        #three{
+            background-color: blue;
+            height: 10%;
+            width: 80%;
+        }
+        #four{
+            background-color: white;
+            height: 80%;
+            width: 80%;
+        }
+        td{
+            -webkit-transition: all 0.3s ease;;
+            -moz-transition: all 0.3s ease;;
+            -o-transition: all 0.3s ease;;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <table>
+            <tr>
+                <td id="two" class="shrink" rowspan="3"></td>
+                <td id="one" class="shrink"></td>
+            </tr>
+            <tr>
+                <td id="four" class="shrink"></td>
+            </tr>
+            <tr>
+                <td id="three" class="shrink"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
