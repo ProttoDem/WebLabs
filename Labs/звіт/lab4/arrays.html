@@ -79,7 +79,317 @@
                 </div>
             </div>
             <div class="central_block" id="content">
-                Масиви
+                <div>
+                  <p style="text-align: center;"> Пункт 4(Масиви)</p>  
+                </div>
+                <table style="border-spacing: 15px;">
+                    <tr>
+                        <td>
+                            <img src="10_1.png" alt="" width="350px" height="300px">
+                        </td>
+                        <td>
+                            <img src="10_2.png" alt="" width="350px" height="300px">
+                        </td>
+                        <td>
+                            <img src="10_3.png" alt="" width="350px" height="300px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <a href="array.html" target="_blank">*Варіант 10*</a>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="task3.html" target="_blank">*Варіант 3*</a> 
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="1Tkachenko.html" target="_blank">*Варіант 6*</a> 
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <p style="text-align: center;">Програмні коди</p>  
+                </div>
+                <table>
+                <tr>
+                    <td style="text-align: center;">
+                        <textarea readonly  cols="50" rows="50">
+                            <script type="text/javascript">
+                                let tooltipElem;
+              
+                              document.onmouseover = function(event) {
+                                let target = event.target;
+              
+                                // если у нас есть подсказка...
+                                let tooltipHtml = target.dataset.tooltip;
+                                if (!tooltipHtml) return;
+              
+                                // ...создадим элемент для подсказки
+              
+                                tooltipElem = document.createElement('div');
+                                tooltipElem.className = 'tooltip';
+                                tooltipElem.innerHTML = tooltipHtml;
+                                document.body.append(tooltipElem);
+              
+                                // спозиционируем его сверху от аннотируемого элемента (top-center)
+                                let coords = target.getBoundingClientRect();
+              
+                                let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+                                if (left < 0) left = 0; // не заезжать за левый край окна
+              
+                                let top = coords.top - tooltipElem.offsetHeight - 5;
+                                if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
+                                  top = coords.top + target.offsetHeight + 5;
+                                }
+              
+                                tooltipElem.style.left = left + 'px';
+                                tooltipElem.style.top = top + 'px';
+                              };
+              
+                              document.onmouseout = function(e) {
+              
+                                if (tooltipElem) {
+                                  tooltipElem.remove();
+                                  tooltipElem = null;
+                                }
+              
+                              };
+              
+                          let result =Number(prompt('Введіть кількість елементів масиву'));
+                          
+                          let arr = [];
+              
+                          function getRandomInt(max) {
+                              return Math.floor(Math.random() * max);
+              
+                          function selectionSort(inputArr) { 
+                  let n = inputArr.length;
+                      
+                  for(let i = 0; i < n; i++) {
+                      // Находим наименьшее число в правой части массива
+                      let min = i;
+                      for(let j = i; j < n; j++) {
+                          if(inputArr[j] < inputArr[min]) {
+                              min=j; 
+                          }
+                       }
+                       if (min != i) {
+                           // Заменяем элементы
+                           let tmp = inputArr[i]; 
+                           inputArr[i] = inputArr[min];
+                           inputArr[min] = tmp;      
+                      }
+                  }
+                  return inputArr;
+              }
+              
+                          function sortArray(array){
+                              for (let i = 0, l = array.length, k = l - 1; i < k; i++) {
+                              let indexMin = i;
+                              for (let j = i + 1; j < l; j++) {
+                                  if (array[indexMin] > array[j]) {
+                                   indexMin = j;
+                                  }
+                              }
+                              if (indexMin !== i) {
+                                  [array[i], array[indexMin]] = [array[indexMin], array[i]];
+                              }
+                          }
+                          return array;
+              
+                          };
+                                                   }
+                          for (let i = 0; i < (result); i += 1) {
+                              arr.push(getRandomInt(10));
+                                                                  };
+                          // for (let i = 0; i < (result); i += 1) {
+                          //     document.write(arr[i]+" ");
+                          //                                         }
+                          // function findIndexOfMin(arr) {
+                          //    let minIndex = 0;
+                          //    let min = arr[0];
+              
+                          //    for (let i = 0; i < arr.length; i++) {
+                          //      if (arr[i] < min) {
+                          //        min = arr[i];
+                          //        minIndex = i;
+                          //      }
+                          //    }
+                          //    return {
+                          //      minIndex
+                          //    };
+                          //  }
+                          //  let min = findIndexOfMin(arr);
+                          //  document.write('\n'+ min);
+                          //  let minValue = arr[min];
+                          //  document.write('\n'+ minValue);
+                          //  arr.unshift(minValue);
+                           document.write("<div class =\"center\"data-tooltip=\"Початковий масив\">"+ arr+ "</div>"); 
+                           let min = Number(Math.min(...arr));
+                           document.write("<div class =\"center\" data-tooltip=\"Найменший з елементів\">"+ min + "<div>"); 
+                           arr.unshift(min);
+                           document.write('\n');
+                           document.write("<div class =\"center\"data-tooltip=\"Змінений масив\">"+ arr+ "</div>");
+                           // let secondArray = selectionSort(arr);
+                           document.write("<div class =\"center\"data-tooltip=\"Відсортований масив\">"+ arr.sort((a, b) => b - a) + "</div>");                     
+                      </script>
+                        </textarea>
+                    </td>
+                    <td style="text-align: center;">
+                        <textarea readonly  cols="50" rows="50">
+                            function start(){
+                                let A = document.getElementById('input_number').value.split(',');
+                                let B = new Array();
+                                for( i = 0; i < A.length; i++){
+                                 B.push(A[i] * Math.max(...A))
+                               }
+                               
+                               document.getElementById('arrayA').innerHTML = A;
+                               document.getElementById('arrayB').innerHTML = insertionSort(B);
+                               
+                               }
+                               function insertionSort(inputArr) {
+                                 let n = inputArr.length;
+                                     for (let i = 1; i < n; i++) {
+                                         // Choosing the first element in our unsorted subarray
+                                         let current = inputArr[i];
+                                         // The last element of our sorted subarray
+                                         let j = i-1; 
+                                         while ((j > -1) && (current < inputArr[j])) {
+                                             inputArr[j+1] = inputArr[j];
+                                             j--;
+                                         }
+                                         inputArr[j+1] = current;
+                                     }
+                                 return inputArr;
+                               }
+                               
+                               window.addEventListener('load', function OnWindowLoaded() {
+                                 // набор кнопок
+                                 var signs = [
+                                     '1', '2', '3', '+',
+                                     '4', '5', '6', '-',
+                                     '7', '8', '9', '/', '%', '**', '**0.5',
+                                     '0', '=', '.', 'c'
+                                 ];
+                               
+                                 // форма калькулятора
+                                 var calc = document.getElementById('calc');
+                               
+                                 // текстовое поле с математическим выражением
+                                 var textArea = document.getElementById('inputVal');
+                               
+                                 // Добавление кнопок к форме калькулятора
+                                 signs.forEach(function (sign) {
+                                     var signElement = document.createElement('div');
+                                     signElement.className = 'btn';
+                                     signElement.innerHTML = sign;
+                                     calc.appendChild(signElement);
+                                 });
+                               
+                                 // проходит по всем кнопкам калькулятора
+                                 // добавляет обработчик на клик
+                                 document.querySelectorAll('#calc-wrap .btn').forEach(function (button) {
+                                     // Добавляем действие, выполняемое при клике на любую кнопку
+                                     button.addEventListener('click', onButtonClick);
+                                 });
+                               
+                                 // функция клика по кнопке калькулятора
+                                 function onButtonClick(e) {
+                                     // e - MouseEvent (содержит информацию о клике)
+                                     if (e.target.innerHTML === 'c') {
+                                         // Если нажата кнопка "с", то стирает все из текстового поля
+                                         textArea.innerHTML = '0';
+                                     } else if (e.target.innerHTML === '=') {
+                                         // Если нажата кнопка "=", то, приведя выражение
+                                         // в текстовом поле к javascript, вычислить значение
+                                         textArea.innerHTML = eval(textArea.innerHTML);
+                                     } else if (textArea.innerHTML === '0') {
+                                         // Если textarea содержит только "0", то
+                                         // стереть "0" и записать
+                                         // значения кнопки в текстовое поле
+                                         textArea.innerHTML = e.target.innerHTML;
+                                     } else {
+                                         // Добавление значения кнопки в текстовое поле
+                                         textArea.innerHTML += e.target.innerHTML;
+                                     }
+                                 }
+                               });
+                        </textarea> 
+                    </td>
+                    <td style="text-align: center;">
+                        <textarea readonly  cols="50" rows="50">
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                  const inp = document.getElementById("number");
+                                  const btnSub = document.getElementById("btnImp");
+                                  const outp = document.getElementById("outp");
+                          
+                                  btnSub.addEventListener("click", () => {
+                                    const { value: inputValue } = inp;
+                          
+                                    if (!inputValue) {
+                                      alert("Введiть кiлькiсть елементiв масиву");
+                                      return;
+                                    }
+                          
+                                    const arrLength = Number.parseFloat(inputValue);
+                                    if (!Number.isInteger(arrLength)) {
+                                      alert("Введiть цiле число");
+                                      return;
+                                    }
+                          
+                                    const arr = [...new Array(arrLength)].map(() =>
+                                      randomIntFromInterval(-100, 100)
+                                    );
+                          
+                                  
+                                    const outpHTML = `
+                                      Вхiдний масив:
+                                      ${arr}<br />
+                                      Сума елементів між максимальним та мінімальним елементом вхідного масиву:
+                                      ${getSumBetweenMinAndMax(arr)}<br />
+                                      Вихiдний масив:
+                                      ${quickSort(arr)}<br />
+                                    `;
+                                    outp.innerHTML = outpHTML;
+                                  });
+                                });
+                          
+                                const randomIntFromInterval = (min, max) =>
+                                  Math.floor(Math.random() * (max - min) + min);
+                          
+                                function quickSort(arr) {
+                                  if (arr.length < 2) return arr;
+                                  let pivot = arr[0];
+                                  const left = [];
+                                  const right = [];
+                              
+                                  for (let i = 1; i < arr.length; i++) {
+                                    if (pivot > arr[i]) {
+                                      left.push(arr[i]);
+                                    } else {
+                                      right.push(arr[i]);
+                                    }
+                                  }
+                                  return quickSort(left).concat(pivot, quickSort(right));
+                                }
+                          
+                                function getSumBetweenMinAndMax(arr) {
+                                  let indMax =  arr.indexOf(Math.max.apply(null, arr));
+                                  let indMin =  arr.indexOf(Math.min.apply(null, arr));
+                                  var i = Math.min(indMin, indMax) + 1
+                                  var stop = Math.max(indMin, indMax)
+                                  var sum = 0;
+                                  for(i; i <= stop; i++){
+                                    sum += arr[i];
+                                    }
+                                  return sum
+                                }
+                              </script>
+                        </textarea> 
+                    </td>
+                </tr>
+            </table>
             </div>
         </div>
     </div>

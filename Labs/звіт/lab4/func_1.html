@@ -78,8 +78,27 @@
                     </div>
                 </div>
             </div>
-            <div class="central_block" id="content">
-            URL scheme
+            <div class="central_block" id="content" style="width: 100%;">
+            <p>URL схема</p>
+            <img src="url.png" alt="">
+            <p>Програмний код</p>
+            <textarea readonly  cols="60" rows="20" >
+                    var flag=0;
+                    function newimage()
+                    {
+                    if(flag==0)
+                    {
+                    document.i1.src=»../img/dog.gif»;
+                    flag=1;
+                    }
+                    else
+                    {
+                    document.i1.src=»../img/cat.gif»;
+                    flag=0;
+                    }
+                    }
+                    <A HREF=»javascript:newimage();void(0);»>
+                    <IMG SRC=../img/cat.gif NAME=i1 width=»100″ height=»99″ BORDER=0> </A>
             </div>
         </div>
     </div>

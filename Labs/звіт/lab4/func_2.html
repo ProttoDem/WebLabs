@@ -66,8 +66,8 @@
                         <a href="func_1.html">
                             <div class="position_in_menu" >Схема URL</div>
                         </a>
-                        <a href="func_2.html" style="background-color: green;"> 
-                            <div class="position_in_menu">Обробник подій</div>
+                        <a href="func_2.html" > 
+                            <div class="position_in_menu"  style="background-color: green;">Обробник подій</div>
                         </a>
                         <a href="func_3.html">
                             <div class="position_in_menu">Підстановка(entity)</div>
@@ -78,8 +78,39 @@
                     </div>
                 </div>
             </div>
-            <div class="central_block" id="content">
-            Обробник подій
+            <div class="central_block" style="width: 100%;" id="content" >
+            <p> Обробник подій</p>
+            <img src="handler.png" alt="">
+            <p>Програмний код</p>
+            <textarea readonly  cols="100" rows="35">
+            
+<script>
+    function js_style() {
+
+      document.getElementById("text1").style.fontSize = "14pt";
+    }
+
+    function js_style2() {
+
+      document.getElementById("text1").style.fontSize = "12pt";
+    }
+    function js_stylet() {
+
+      document.getElementById("text2").style.fontSize = "14pt";
+    }
+
+    function js_stylet2() {
+
+      document.getElementById("text2").style.fontSize = "12pt";
+    }
+  </script>
+
+<p id="text1" onmouseover="js_style()" onmouseout="js_style2()">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto odio iste soluta ratione illum dignissimos in modi autem eum quaerat esse nobis recusandae tempore, excepturi maiores harum repudiandae eius? Placeat.</p>
+        </li>
+        <li>
+          <img src="kpi.jpg" alt="">
+          <p id="text2" onmouseover="js_stylet()" onmouseout="js_stylet2()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sapiente suscipit harum sed id unde dignissimos aspernatur. In repudiandae ad error maxime quisquam quasi omnis velit, hic iusto eum ducimus?</p>
+            </textarea>
             </div>
         </div>
     </div>

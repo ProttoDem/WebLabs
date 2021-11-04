@@ -72,14 +72,30 @@
                         <a href="func_3.html ">
                             <div class="position_in_menu">Підстановка(entity)</div>
                         </a>
-                        <a href="func_4.html"  style="background-color: green;">
-                            <div class="position_in_menu">Вставка(тег script)</div>
+                        <a href="func_4.html" >
+                            <div class="position_in_menu"  style="background-color: green;">Вставка(тег script)</div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="central_block" id="content">
-            Вставка тег
+            <div class="central_block" id="content" style="width: 100%;">
+            <p>Тег script (вставка)</p>
+            <img src="script.png" alt="">
+
+            <p>Програмний код</p>
+            <textarea readonly  cols="50" rows="25">
+                
+                <button class = "button" onclick = "counter()" style="height: 20px; width: 200px">Add 1 using js</button>
+                    <p id="num"></p>
+
+                <script>
+                    let num = localStorage.getItem("counter");
+                      function counter() {
+                      document.getElementById("num").textContent = ++num;
+                      localStorage.setItem("counter", document.getElementById("num").textContent);
+                    }
+                  </script>
+                </textarea>
             </div>
         </div>
     </div>

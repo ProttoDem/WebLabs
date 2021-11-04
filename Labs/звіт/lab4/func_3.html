@@ -69,8 +69,8 @@
                         <a href="func_2.html" > 
                             <div class="position_in_menu">Обробник подій</div>
                         </a>
-                        <a href="func_3.html " style="background-color: green;">
-                            <div class="position_in_menu">Підстановка(entity)</div>
+                        <a href="func_3.html ">
+                            <div class="position_in_menu"  style="background-color: green;">Підстановка(entity)</div>
                         </a>
                         <a href="func_4.html">
                             <div class="position_in_menu">Вставка(тег script)</div>
@@ -78,8 +78,26 @@
                     </div>
                 </div>
             </div>
-            <div class="central_block" id="content">
-            Підстановка
+            <div class="central_block" id="content" style="width: 100%;">
+            <p>Підстановка</p>
+            <p>Програмний код</p>
+            <textarea readonly  cols="50" rows="25">
+                <HTML>
+                    <HEAD>
+                    <SCRIPT>
+                    function time_scroll()
+                    {
+                    var d = new Date();
+                    window.status = d.getHours() +":"+d.getMinutes() +":"+
+                    d.getSeconds();
+                    setTimeout('time_scroll();',500);
+                    }
+                    </SCRIPT>
+                    </HEAD>
+                    <BODY onLoad=time_scroll()>
+                    <CENTER>
+                    <H1>Часи в строці статусу</H1>
+                </textarea> 
             </div>
         </div>
     </div>

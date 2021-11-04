@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Arrays</title>
+  
+        <style>
+            .center{
+                text-align: center;
+            
+            }
+            .tooltip {
+                  position: fixed;
+                  padding: 10px 20px;
+                  border: 1px solid #b3c9ce;
+                  border-radius: 4px;
+                  text-align: center;
+                  font: italic 14px/1.3 sans-serif;
+                  color: #333;
+                  background: #fff;
+                  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+                }
+            article, aside, details, figcaption, figure, footer,header,
+            hgroup, menu, nav, section { display: block; }
+        </style>
+    </head>
+
+    <body>
+        
+        <script type="text/javascript">
+                  let tooltipElem;
+
+                document.onmouseover = function(event) {
+                  let target = event.target;
+
+                  // если у нас есть подсказка...
+                  let tooltipHtml = target.dataset.tooltip;
+                  if (!tooltipHtml) return;
+
+                  // ...создадим элемент для подсказки
+
+                  tooltipElem = document.createElement('div');
+                  tooltipElem.className = 'tooltip';
+                  tooltipElem.innerHTML = tooltipHtml;
+                  document.body.append(tooltipElem);
+
+                  // спозиционируем его сверху от аннотируемого элемента (top-center)
+                  let coords = target.getBoundingClientRect();
+
+                  let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+                  if (left < 0) left = 0; // не заезжать за левый край окна
+
+                  let top = coords.top - tooltipElem.offsetHeight - 5;
+                  if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
+                    top = coords.top + target.offsetHeight + 5;
+                  }
+
+                  tooltipElem.style.left = left + 'px';
+                  tooltipElem.style.top = top + 'px';
+                };
+
+                document.onmouseout = function(e) {
+
+                  if (tooltipElem) {
+                    tooltipElem.remove();
+                    tooltipElem = null;
+                  }
+
+                };
+
+            let result =Number(prompt('Введіть кількість елементів масиву'));
+            
+            let arr = [];
+
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+
+            function selectionSort(inputArr) { 
+    let n = inputArr.length;
+        
+    for(let i = 0; i < n; i++) {
+        // Находим наименьшее число в правой части массива
+        let min = i;
+        for(let j = i; j < n; j++) {
+            if(inputArr[j] < inputArr[min]) {
+                min=j; 
+            }
+         }
+         if (min != i) {
+             // Заменяем элементы
+             let tmp = inputArr[i]; 
+             inputArr[i] = inputArr[min];
+             inputArr[min] = tmp;      
+        }
+    }
+    return inputArr;
+}
+
+            function sortArray(array){
+                for (let i = 0, l = array.length, k = l - 1; i < k; i++) {
+                let indexMin = i;
+                for (let j = i + 1; j < l; j++) {
+                    if (array[indexMin] > array[j]) {
+                     indexMin = j;
+                    }
+                }
+                if (indexMin !== i) {
+                    [array[i], array[indexMin]] = [array[indexMin], array[i]];
+                }
+            }
+            return array;
+
+            };
+                                     }
+            for (let i = 0; i < (result); i += 1) {
+                arr.push(getRandomInt(10));
+                                                    };
+            // for (let i = 0; i < (result); i += 1) {
+            //     document.write(arr[i]+" ");
+            //                                         }
+            // function findIndexOfMin(arr) {
+            //    let minIndex = 0;
+            //    let min = arr[0];
+
+            //    for (let i = 0; i < arr.length; i++) {
+            //      if (arr[i] < min) {
+            //        min = arr[i];
+            //        minIndex = i;
+            //      }
+            //    }
+            //    return {
+            //      minIndex
+            //    };
+            //  }
+            //  let min = findIndexOfMin(arr);
+            //  document.write('\n'+ min);
+            //  let minValue = arr[min];
+            //  document.write('\n'+ minValue);
+            //  arr.unshift(minValue);
+             document.write("<div class =\"center\"data-tooltip=\"Початковий масив\">"+ arr+ "</div>"); 
+             let min = Number(Math.min(...arr));
+             document.write("<div class =\"center\" data-tooltip=\"Найменший з елементів\">"+ min + "<div>"); 
+             arr.unshift(min);
+             document.write('\n');
+             document.write("<div class =\"center\"data-tooltip=\"Змінений масив\">"+ arr+ "</div>");
+             // let secondArray = selectionSort(arr);
+             document.write("<div class =\"center\"data-tooltip=\"Відсортований масив\">"+ arr.sort((a, b) => b - a) + "</div>");                     
+        </script>
+        
+    </body>
+</html>
