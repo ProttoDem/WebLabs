@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#red,
+#green,
+#blue {
+  float: left;
+  clear: left;
+  width: 300px;
+  margin: 15px;
+}
+#swatch {
+  width: 120px;
+  height: 100px;
+  margin-top: 18px;
+  margin-left: 350px;
+  background-image: none;
+}
+#red .ui-slider-range {
+  background: #ef2929;
+}
+#red .ui-slider-handle {
+  border-color: #ef2929;
+}
+#green .ui-slider-range {
+  background: #8ae234;
+}
+#green .ui-slider-handle {
+  border-color: #8ae234;
+}
+#blue .ui-slider-range {
+  background: #729fcf;
+}
+#blue .ui-slider-handle {
+  border-color: #729fcf;
+}
+
+.info {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.jQtooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+.jQtooltip div {
+  display: none;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  z-index: 1000;
+  width: 280px;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  box-shadow: 0 1px 3px #c4c4c4;
+  border: 1px solid #dbb779;
+  background: #fff6bd;
+  border-radius: 2px;
+  font-size: 20px;
+}
