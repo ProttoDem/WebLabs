@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="chief-slider.css">
+	<script defer src="chief-slider.js"></script>
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		header { /*Заголовок*/
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		nav ul { /*Список у головному меню*/
+			list-style: none;
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 30px;
+		}
+
+		nav li {/* Кожен окремий елемент у списку в головному меню */
+			margin-right: 20px;
+		}
+
+		main { /*Глобальний стиль для головної частини*/
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.news {/*Глобальний стиль для блоку новин*/
+			padding: 30px 20px;
+		}
+
+		.news ul {/*Стиль для списку новин*/
+			list-style: none;
+		}
+
+		
+		*,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+    }
+
+    .container {
+      max-width: 700px;
+    }
+
+    .slider__wrapper {
+      overflow: hidden;
+    }
+
+    .slider__item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 7rem;
+    }
+
+    .slider__item:nth-child(1) {
+      background-image: url(Політика.png);
+	  background-size: contain;
+	  background-repeat: no-repeat;
+    }
+
+    .slider__item:nth-child(2) {
+		background-image: url(cat.jpg);
+	  background-size: contain;
+	  background-repeat: no-repeat;
+    }
+
+    .slider__item:nth-child(3) {
+		background-image: url(cat2.jpg);
+	  background-size: contain;
+	  background-repeat: no-repeat;
+    }
+
+	</style>
+	<script>
+	  document.addEventListener('DOMContentLoaded', function () {
+		const slider = new ChiefSlider('.slider', {
+		  loop: true,
+		  autoplay: true,
+		  interval: 7000,
+		});
+	  });
+	</script>
+</head>
+
+<body>
+	<header>
+		<a href="Main.html"><img src="logo.png" width="400px" alt=""></a>
+	</header>
+	<main>
+		<nav>
+			<ul>
+				<li><a href="politics.html" class="h_btn btn1">Політика</a></li>
+                            <li><a href="sport.html" class="h_btn btn1">Спорт</a></li>
+                            <li><a href="show.html" class="h_btn btn1">Шоу</a></li>
+			</ul>
+		</nav>
+		<div class="news">
+			<ul>
+				<li>
+					<div class="container">
+
+						<div class="slider">
+						  <div class="slider__wrapper">
+							<div class="slider__items">
+							  <div class="slider__item">
+							  </div>
+							  <div class="slider__item">
+							  </div>
+							  <div class="slider__item">
+							  </div>
+							</div>
+						  </div>
+						  <a href="#" class="slider__control" data-slide="prev"></a>
+						  <a href="#" class="slider__control" data-slide="next"></a>
+						  <ol class="slider__indicators">
+							<li data-slide-to="0"></li>
+							<li data-slide-to="1"></li>
+							<li data-slide-to="2"></li>
+						  </ol>
+						</div>
+					
+					  </div>
+						
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto odio iste soluta ratione illum dignissimos in modi autem eum quaerat esse nobis recusandae tempore, excepturi maiores harum repudiandae eius? Placeat.</p>
+				</li>
+				<li>
+					<img src="Політика.png" width="200px"alt="">
+						
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sapiente suscipit harum sed id unde dignissimos aspernatur. In repudiandae ad error maxime quisquam quasi omnis velit, hic iusto eum ducimus?</p>
+				</li>
+			</ul>
+		</div>
+	</main>
+	
+</body>
+
+</html>

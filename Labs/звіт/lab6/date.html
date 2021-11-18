@@ -63,6 +63,9 @@
                 <div class="dropdown">
                     <button class="dropbtn">Усановка WEB-серверу</button>
                     <div class="dropdown-content">
+                        <a href="drop_3.html">
+                            <div class="position_in_menu" >Установка</div>
+                        </a>
                         <a href="drop_1.html">
                             <div class="position_in_menu">Запит для перегляду</div>
                         </a>
@@ -72,8 +75,28 @@
                     </div>
                 </div>
             </div>
-            <div class="central_block" id="content">
-                Зворотній зв'язок дата 
+            <div class="central_block" id="content" style="width: 100%;">
+                <div style="text-align: center;"><p>Зворотній зв'язок. Відображення дати</p></div>
+                <p>Створимо обробник подій для форми зворотнього зв'язку</p>
+                <div style="text-align: center;">
+                <p>PHP - код обробника:</p>
+                <textarea readonly  cols="100" rows="10">
+                    <?php if(isset($_POST["tags"])){
+                        $message = htmlentities($_POST['tags']); 
+                           echo '<h2>Ви написали:</h2> ';
+                           echo $message;
+                           echo '<br>';
+                           echo 'Дата та час обробки повідомлення: <br>';
+                           echo date('Y-m-d H:i:s');
+                           echo '<br>';
+                       }; ?> 
+                    </textarea>
+                </div>
+                <p>Тепер, коли користувач вводить повідомлення, воно оброблюється на сервері та повертається відповідь</p>
+                <div style="text-align: center;">
+                    <img src="date.png" alt="">
+                    <p>Рис. 1 - Форма зворотнього зв'язку</p>
+                </div>
             </div>
         </div>
     </div>
