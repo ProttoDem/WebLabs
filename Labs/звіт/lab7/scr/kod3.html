@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea readonly  cols="200" rows="50">
+        CREATE DATABASE var3;
+        USE var3;
+        
+        CREATE TABLE shops(
+          Id INTEGER auto_increment NOT NULL,
+            Title VARCHAR(255) CHECK(Title != '') NOT NULL,
+            Location VARCHAR(255) CHECK(Location != '') NOT NULL,
+            Profit INTEGER,
+            primary key(Id)
+        );
+        
+        CREATE TABLE workers(
+          Id INTEGER auto_increment NOT NULL,
+            FName VARCHAR(30) CHECK(FName != '') NOT NULL,
+            LName VARCHAR(30) CHECK(LName != '') NOT NULL,
+            IdShop INTEGER NOT NULL,
+            primary key(Id),
+            foreign key(IdShop) REFERENCES shops(Id)
+            on update cascade 
+            on delete cascade
+        );
+        
+        CREATE TABLE devices(
+          Id INTEGER auto_increment NOT NULL,
+            Title VARCHAR(255) CHECK(Title != '') NOT NULL,
+            Model VARCHAR(255) CHECK(Model != '') NOT NULL,
+            Price INTEGER CHECK( Price >= 0) NOT NULL,
+            IdShop INTEGER NOT NULL,
+            primary key(Id),
+            foreign key(IdShop) REFERENCES shops(Id)
+            on update cascade 
+            on delete cascade
+        );
+        
+        INSERT INTO shops(Title, Location, Profit) values('Comfy', 'Kyiv', 3000);
+        INSERT INTO shops(Title, Location, Profit) values('Rozetka', 'Kyiv', 6000);
+        
+        
+        INSERT INTO workers(FName, LName, IdShop) values('Petrov', 'Ivan', 1);
+        INSERT INTO workers(FName, LName, IdShop) values('Sidorov', 'Lan', 2);
+        INSERT INTO workers(FName, LName, IdShop) values('Ivanov', 'Andrei', 2);
+        INSERT INTO workers(FName, LName, IdShop) values('Krutov', 'Kenny', 1);
+        
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Iphone', '999', 5, 1);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Laiphone', '2', 99999, 1);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Kekeslam', 'R2D2', 168, 1);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Monitor', 'Best', 3999, 1);
+        
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Notebook', 'Worst', 888, 2);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('TV', 'Normal', 1337, 2);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Gamepad', 'So-SO', 1488, 2);
+        INSERT INTO devices(Title, Model, Price, IdShop) values('Memespad', 'NoIdea', 228, 2);
+
+    </textarea>
+</body>
+</html>

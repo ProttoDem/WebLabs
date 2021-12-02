@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea readonly  cols="200" rows="50">
+        CREATE TABLE services(
+            Id INTEGER auto_increment NOT NULL,
+              Title VARCHAR(255) CHECK(Title != '') NOT NULL,
+              Link VARCHAR(255) CHECK(Link != '') NOT NULL,
+              User_count INTEGER,
+              primary key(Id)
+          );
+          
+          CREATE TABLE users(
+            Id INTEGER auto_increment NOT NULL,
+              Nickname VARCHAR(30) CHECK(Nickname != '') NOT NULL,
+              LName VARCHAR(30) CHECK(LName != '') NOT NULL,
+              IdService INTEGER NOT NULL,
+              primary key(Id),
+              foreign key(IdService) REFERENCES services(Id)
+              on update cascade 
+              on delete cascade
+          );
+          
+          CREATE TABLE books(
+            Id INTEGER auto_increment NOT NULL,
+              Title VARCHAR(255) CHECK(Title != '') NOT NULL,
+              Author VARCHAR(255) CHECK(Author != '') NOT NULL,
+              Price INTEGER CHECK( Price >= 0) NOT NULL,
+              IdService INTEGER NOT NULL,
+              primary key(Id),
+              foreign key(IdService) REFERENCES services(Id)
+              on update cascade 
+              on delete cascade
+          );
+          
+          INSERT INTO services(Title, Link, User_count) values('Biblioteka Online', 'www.biblioteka.online', 100000);
+          INSERT INTO services(Title, Link, User_count) values('Knig.net', 'www.knig.net', 90000);
+          
+          
+          INSERT INTO users(Nickname, LName, IdService) values('user1', 'Petrov', 1);
+          INSERT INTO users(Nickname, LName, IdService) values('user2', 'Sidorov', 2);
+          INSERT INTO users(Nickname, LName, IdService) values('user3', 'Ivanov', 2);
+          INSERT INTO users(Nickname, LName, IdService) values('user4', 'Krutov', 1);
+          
+          INSERT INTO books(Title, Author, Price, IdService) values('«Война и мир»', 'Лев Толстой', 100, 1);
+          INSERT INTO books(Title, Author, Price, IdService) values('«1984»', 'Джордж Оруэлл', 200, 1);
+          INSERT INTO books(Title, Author, Price, IdService) values('«Улисс»', 'Джеймс Джойс', 95, 1);
+          INSERT INTO books(Title, Author, Price, IdService) values('«Человек-невидимка»', 'Ральф Эллисон', 105, 1);
+          
+          INSERT INTO books(Title, Author, Price, IdService) values('«Божественная комедия»', 'Данте Алигьери', 70, 2);
+          INSERT INTO books(Title, Author, Price, IdService) values('«Великий Гэтсби»', 'Фрэнсис Скотт Фицджеральд', 110, 2);
+          INSERT INTO books(Title, Author, Price, IdService) values('«История»', 'Геродот', 50, 2);
+          INSERT INTO books(Title, Author, Price, IdService) values('«Властелин колец»', 'Джон Толкин', 300, 2);
+    </textarea>
+</body>
+</html>

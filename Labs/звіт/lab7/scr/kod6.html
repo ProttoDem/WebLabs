@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea readonly  cols="200" rows="50">
+        CREATE TABLE trains(
+            Id INTEGER auto_increment NOT NULL PRIMARY KEY,
+              T_Name VARCHAR(255) CHECK(T_Name != '') NOT NULL,
+              T_Number INTEGER NOT NULL,
+              Capacity INTEGER,
+          );
+          
+          CREATE TABLE stops(
+            Id INTEGER auto_increment NOT NULL PRIMARY KEY,
+              S_Name VARCHAR(30) CHECK(S_Name != '') NOT NULL,
+              S_Code INTEGER NOT NULL,
+          );
+          
+          CREATE TABLE routes(
+            Id INTEGER auto_increment NOT NULL PRIMARY KEY,
+              R_Name VARCHAR(255) CHECK(R_Name != '') NOT NULL,
+              R_Code INTEGER NOT NULL,
+              IdTrain INTEGER NOT NULL,
+              IdBeginStop INTEGER NOT NULL,
+              IdEndStop INTEGER NOT NULL,
+              foreign key(IdTrain) REFERENCES trains(Id)
+              on update cascade 
+              on delete CASCADE,
+              foreign key(IdBeginStop) REFERENCES stops(Id)
+              on update cascade 
+              on delete CASCADE,
+              foreign key(IdEndStop) REFERENCES stops(Id)
+              on update cascade 
+              on delete CASCADE,
+          );
+          
+          INSERT INTO trains(T_Name, T_Number, Capacity) values('Poizd 1', '3123149', 250);
+          INSERT INTO trains(T_Name, T_Number) values('Poizd 2', '4342124';
+          INSERT INTO trains(T_Name, T_Number, Capacity) values('Poizd 3', '1243131', 400);
+          
+          INSERT INTO stops(S_Name, S_Code) values('Kyiv', 1);
+          INSERT INTO stops(S_Name, S_Code) values('Lviv', 2);
+          INSERT INTO stops(S_Name, S_Code) values('Zhytomyr', 3);
+          INSERT INTO stops(S_Name, S_Code) values('Dnipro', 4);
+    </textarea>
+</body>
+</html>
