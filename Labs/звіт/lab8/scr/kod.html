@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea readonly  cols="100" rows="50">
+        CREATE TABLE users (
+    id int NOT NULL auto_increment,
+    login varchar(15) NOT NULL,
+    password varchar(15) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE news (
+  id int NOT NULL auto_increment,
+    category varchar(15) NOT NULL,
+    title varchar(15) NOT NULL,
+    news_text text(5000) NOT NULL,
+    primary key (id)
+);
+
+ALTER TABLE news add mainpage bool default (false) NOT NULL;
+
+insert into news (category, title, news_text, mainpage) VALUES ('Politics', 'Politic_News_1', 'The text of politic article 1', true);
+insert into news (category, title, news_text, mainpage) VALUES ('Politics', 'Politic_News_2', 'The text of politic article 2', false);
+insert into news (category, title, news_text, mainpage) VALUES ('Sport', 'Sport_News_1', 'The text of sport article 1', false);
+insert into news (category, title, news_text, mainpage) VALUES ('Sport', 'Sport_News_2', 'The text of sport article 2', true);
+insert into news (category, title, news_text, mainpage) VALUES ('Show', 'Show_News_1', 'The text of show article 1', false);
+insert into news (category, title, news_text, mainpage) VALUES ('Show', 'Show_News_2', 'The text of show article 2', false);
+    </textarea>
+</body>
+</html>
